@@ -2,8 +2,6 @@
 
 > An interactive solar system simulator covering 7 stages of orbital mechanics and rocket trajectory planning.
 
-🌐 **[Live Demo →](https://your-url.vercel.app)**
-
 ---
 
 ## What it does
