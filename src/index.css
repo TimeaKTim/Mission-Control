@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.7), 0 0 60px rgba(6, 182, 212, 0.3); }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(400%); }
+}
+
+.star {
+  position: fixed;
+  border-radius: 50%;
+  background: white;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+.glow-cyan { text-shadow: 0 0 20px rgba(6, 182, 212, 0.8); }
+.glow-purple { text-shadow: 0 0 20px rgba(168, 85, 247, 0.8); }
+
+.card-glow {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15),
+              inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.6), transparent);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(50%) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(50%) rotate(-360deg); }
+}
+@keyframes spin-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tab-content {
+  animation: fadeSlideIn 0.2s ease-out;
+}
